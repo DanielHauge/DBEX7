@@ -137,3 +137,30 @@ vettel |	Red Bull |	70 |	4927545
 
 
 ### 6. Who has the fastest pitstop on average.
+- Solution B from task 5, has been chosen in this task.
+##### Query:
+```sql
+SELECT drivers.driverref, constructors.name, count(*), sum(ms) as TotalPitStop, ROUND(sum(ms)/count(results.raceid), 2) as AveragePit  from drivers
+JOIN results USING (driverid) 
+JOIN pit USING (driverid, raceid)
+JOIN constructors USING (constructorid)
+WHERE results.statusid = 1
+GROUP BY drivers.driverref, constructors.name
+ORDER BY averagePit ASC
+```
+
+##### Results:
+- Results limited to 10 | Query has 76 rows
+
+driverref |	name |	count |	totalpitstop |	averagepit
+------------:|:------:|:---:|:---------:|:----------
+ambrosio |	Lotus F1 |	1 |	21962 |	21962.00
+rosa |	HRT |	1 |	22272 |	22272.00
+hulkenberg |	Renault |	5 |	186700 |	37340.00
+glock |	Marussia |	2 |	82876 |	41438.00
+bruno_senna |	Williams |	13 |	574413 |	44185.62
+perez |	Sauber |	15 |	681053 |	45403.53
+resta |	Force  India |	34 |	1563408 |	45982.59
+ricciardo |	Toro Rosso |	22 |	1015872 |	46176.00
+raikkonen |	Lotus F1 |	33 |	1532336 |	46434.42
+maldonado |	Williams |	21 |	982946 |	46806.95
