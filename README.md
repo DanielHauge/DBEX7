@@ -110,7 +110,7 @@ alonso |	Ferrari |	87 |	3691856
 coulthard |	McLaren |	85 |	None
 hamilton |	Mercedes |	85 |	12147994
 
-- Note: A Outer join will generate null values in the result set, as can be seen with the 141 races where michael schumacher completed the race, but never once had a pitstop in a ferrari, according to the data. (I realy thouroughly scourered the dataset, there realy is missing data on pitstops when michael schumacher was driving a ferrari, only in a Mercedes where he drove approx 38 races in it.). When not doing a outer join, this information will get exluded or removed out. So we wont know he drove a ferrari in 141 races any longer.
+- Note: A Outer join will generate null values in the result set, as can be seen with the 141 races where michael schumacher completed the race, but never once had a pitstop in a ferrari, according to the data. (I realy thouroughly scourered the dataset, there realy is missing data on pitstops when michael schumacher was driving a ferrari, only in a Mercedes where he drove approx 34 races in it, where he also completed.). When not doing a outer join, this information will get exluded or removed out. So we wont know he drove a ferrari in 141 races any longer.
 
 #### Solution B.
 - Depending on how you interpret the task, it can be done in 2 ways. We don't neccesarily want to keep the results, ie. We dont want to know the total pitstop time if it is non existing. eg. we dont want to know if michael schumacher has driven a ferrari 141 times, if he never had a pitstop in one.
